@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,83 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic-Tac-Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3K4-5x-hD5">
+                                <rect key="frame" x="69" y="32" width="237" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XF-Y8-ZYp">
+                                <rect key="frame" x="69" y="579" width="237" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Ab0-hn-JEE"/>
+                                    <constraint firstAttribute="width" constant="237" id="XSl-cd-b4i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx4-Rq-wWG">
+                                <rect key="frame" x="19" y="175" width="337.5" height="337.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fx4-Rq-wWG" secondAttribute="height" multiplier="1:1" id="yjp-s7-aXe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qd0-fj-P1N" customClass="LineView" customModule="TicTacToe" customModuleProvider="target">
+                                <rect key="frame" x="19" y="175" width="338" height="338"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVF-PC-rGc">
+                                <rect key="frame" x="99" y="87" width="177" height="43"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.73725490199999999" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="177" id="9vR-oe-uCW"/>
+                                    <constraint firstAttribute="height" constant="43" id="gjf-R6-EfN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="NEW GAME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGF-mG-8X2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3XF-Y8-ZYp" secondAttribute="bottom" constant="46" id="0AP-7I-xIP"/>
+                            <constraint firstItem="OVF-PC-rGc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0w1-48-sA9"/>
+                            <constraint firstItem="fx4-Rq-wWG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="7iS-Mp-khK"/>
+                            <constraint firstItem="3K4-5x-hD5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A08-rm-Kcw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3K4-5x-hD5" secondAttribute="trailing" constant="69" id="KGZ-pG-nO8"/>
+                            <constraint firstItem="3K4-5x-hD5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="NbL-r3-EQU"/>
+                            <constraint firstItem="Qd0-fj-P1N" firstAttribute="width" secondItem="fx4-Rq-wWG" secondAttribute="width" id="Qpb-dM-VDC"/>
+                            <constraint firstItem="Qd0-fj-P1N" firstAttribute="centerY" secondItem="fx4-Rq-wWG" secondAttribute="centerY" id="Xnc-il-8Jk"/>
+                            <constraint firstItem="Qd0-fj-P1N" firstAttribute="centerX" secondItem="fx4-Rq-wWG" secondAttribute="centerX" id="Yza-gw-dfI"/>
+                            <constraint firstItem="3XF-Y8-ZYp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fy5-dp-GsN"/>
+                            <constraint firstItem="3K4-5x-hD5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="jTJ-A9-QGU"/>
+                            <constraint firstItem="Qd0-fj-P1N" firstAttribute="height" secondItem="fx4-Rq-wWG" secondAttribute="height" id="jbr-lx-Iak"/>
+                            <constraint firstItem="fx4-Rq-wWG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="veV-kg-Si3"/>
+                            <constraint firstItem="OVF-PC-rGc" firstAttribute="top" secondItem="3K4-5x-hD5" secondAttribute="bottom" constant="21.5" id="wNm-CM-uy3"/>
+                            <constraint firstItem="fx4-Rq-wWG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="xVt-F1-hI5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="boardView" destination="fx4-Rq-wWG" id="XzQ-ZW-lP1"/>
+                        <outlet property="infoLabel" destination="3XF-Y8-ZYp" id="Aea-6z-kWQ"/>
+                        <outlet property="lineView" destination="Qd0-fj-P1N" id="XTA-4d-10P"/>
+                        <outlet property="newGameButton" destination="OVF-PC-rGc" id="hs5-we-D5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="169.56521739130437"/>
         </scene>
     </scenes>
 </document>

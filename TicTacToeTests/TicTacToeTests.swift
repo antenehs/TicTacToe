@@ -24,6 +24,12 @@ class TicTacToeTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let status = BoardManager.status(forBoard: Array(repeatElement(.x, count: 9)))
+        XCTAssert(status == .Won, "Worng status")
+        
+        let status2 = BoardManager.status(forBoard: Array(repeatElement(.o, count: 9)))
+        XCTAssert(status2 == .Lost, "Worng status")
     }
     
     func testPerformanceExample() {
